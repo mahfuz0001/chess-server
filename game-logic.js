@@ -1,7 +1,3 @@
-/**
- * Here is where we should register event listeners and emitters.
- */
-
 var io;
 var gameSocket;
 // gamesInSession stores an array of all active socket connections
@@ -100,12 +96,6 @@ function createNewGame(gameId) {
 }
 
 function newMove(move) {
-  /**
-   * First, we need to get the room ID in which to send this message.
-   * Next, we actually send this message to everyone except the sender
-   * in this room.
-   */
-
   const gameId = move.gameId;
 
   io.to(gameId).emit("opponent move", move);
